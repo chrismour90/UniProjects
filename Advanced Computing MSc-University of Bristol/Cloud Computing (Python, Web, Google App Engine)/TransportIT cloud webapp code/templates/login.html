@@ -1,0 +1,35 @@
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>TransportIT</title>
+  <link rel="stylesheet" type="text/css" href="/static/stylesheet/login.css">
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+</head>
+
+<body>
+  <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Transport<span>IT</span></div>
+		</div>
+		<br>
+		<div class="login">
+				<form method="post" action="/login">
+					<input type="text" placeholder="username" name="account"  /><br>
+					<input type="password" placeholder="password" name="password" /><br>
+                                        {%if error %}
+          				<h2 class="warning">
+           				{{ error }}
+          				</h2>
+          				{% endif %}
+					<input type="submit" value="Login" />
+					<input type="submit" value="Sign Up" onclick="window.location='/apply'; return false;"  />
+				</form>
+		</div>
+ 		<div class="comment">
+			<div>New to Transport<span>IT</span>?</div>
+		</div>
+
+  
+</body>
+</html>

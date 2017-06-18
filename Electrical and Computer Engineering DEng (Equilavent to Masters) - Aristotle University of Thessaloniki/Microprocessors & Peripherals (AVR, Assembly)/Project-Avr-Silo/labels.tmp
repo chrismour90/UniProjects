@@ -1,0 +1,33 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.42</VERSION>
+ <DEVICE>ATmega16</DEVICE>
+ <WORKING_DIR>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia\ErgasiaSilo.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes\m16def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia\ErgasiaSilo.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia\ErgasiaSilo.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia\ErgasiaSilo.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <reset><FILE>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia\ErgasiaSilo.asm</FILE><LINE>13</LINE></reset>
+  <main><FILE>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia\ErgasiaSilo.asm</FILE><LINE>31</LINE></main>
+  <waitStart><FILE>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia\ErgasiaSilo.asm</FILE><LINE>33</LINE></waitStart>
+  <Start><FILE>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia\ErgasiaSilo.asm</FILE><LINE>39</LINE></Start>
+  <ADC_Init><FILE>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia\ErgasiaSilo.asm</FILE><LINE>95</LINE></ADC_Init>
+  <Move><FILE>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia\ErgasiaSilo.asm</FILE><LINE>66</LINE></Move>
+  <SevenSecondDelay><FILE>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia\ErgasiaSilo.asm</FILE><LINE>76</LINE></SevenSecondDelay>
+  <outer><FILE>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia\ErgasiaSilo.asm</FILE><LINE>79</LINE></outer>
+  <mid><FILE>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia\ErgasiaSilo.asm</FILE><LINE>81</LINE></mid>
+  <inner><FILE>C:\Users\Christos\Desktop\THMMY\8o\Mikro 2\Ergasia\ErgasiaSilo.asm</FILE><LINE>83</LINE></inner>
+ </LABELS>
+</ASSEMBLER_INFO>

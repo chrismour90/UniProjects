@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TransportIT Main Page</title>
+  <link rel="stylesheet" type="text/css" href="/static/stylesheet/mainPage.css">
+ 
+</head>
+<body>
+
+<ul class="tab">
+  <li><div class="header">Transport<span>IT</span></div></li>
+  <li><a href="senderSignIn.html" class="tablinks" onmouseover="openDescription(event, 'Sender')" onmouseleave="closeDescription(event,'Sender')" onclick="window.location='/sender'; return false;" >Sender</a></li>
+  <li><a href="transporterSignIn.html" class="tablinks" onmouseover="openDescription(event, 'Transporter')" onmouseleave="closeDescription(event,'Transporter')" onclick="window.location='/transporter'; return false;">Transporter</a></li>  
+ <li id='last'><a href="#" class="tablinks" onmouseover="openDescription(event, 'LogOut')" onmouseleave="closeDescription(event,'LogOut')" onclick="window.location='/logout'; return false;"  ><img src="/static/img/logout.png" alt='LogOut'></a></li>  
+ <li id="last"><a href="changeDetails.html" class="tablinks" onmouseover="openDescription(event, 'ChangeYourDetails')" onmouseleave="closeDescription(event,'ChangeYourDetails')" onclick="window.location='/ChangeDetails'; return false;" ><img src="/static/img/edit.png" alt='edit'></a></li>
+</ul>
+
+<div class="spaceDescription">
+<div id="Sender" class="tabcontent">
+  <h3>Sender</h3>
+  <p>Declare the characteristics and the destination of the item.</p>
+</div>
+
+<div id="Transporter" class="tabcontent">
+  <h3>Transporter</h3>
+  <p>Declare your journey and the maximum load you can transport.</p> 
+</div>
+
+<div id="LogOut" class="tabcontent">
+  <h3>LogOut</h3>
+  <p>Leaving TransportIT? Make sure that your data is accurate.</p>
+</div>
+
+<div id="ChangeYourDetails" class="tabcontent">
+  <h3>Change your details</h3>
+  <p>Make changes in your account to keep it up to date.</p>
+</div>
+</div>
+
+
+<div class="container">
+  <div class="item" id="queries"><div class="subHeader">Notifications <span>for</span> {{username}}!!</div><br>
+    {% if sender_matching_flag %}
+      <p>
+      <h4> Congratulations!! You have selected user : <u> {% if matching_account %} {{matching_account}} {% endif %} </u> for posting an item from: <u> {% if sender_from    %} {{sender_from   }} {% endif %} </u> to: <u> {% if sender_to    %} {{sender_to   }} {% endif %} </u>  </h4>
+          
+
+    <p><form method="post" action="/MainPage"> <button type="submit">Cancel and choose other transporter</button> </form> 
+    <form method="get" action="/SenderHistory"> <button type="submit">Confirm and go back</button> </form> </p>
+    
+ <h4 align="center">  Thank you for choosing TransportIT </h4>
+      
+    {% endif %}
+
+    {% if transporter_matching_flag %}
+      <h3 align="center"> {% if error %} {{error }} {% endif %} </h3>
+      <p>
+      {% for match in transporter_list %}
+      <ul>
+      <li> Congratulations!! You have been selected by user : <b> {{ match.sender.account }} </b> for posting an item from: <b> {{ match.sender_details.from_ }} </b> to: <b> {{ match.sender_details.destination}}</b>! <br>Contact email is : <b> {{ match.sender.email }} </b> </li>
+     
+      </ul>
+      {% endfor %} 
+    <form method="get" action="/MainPage"> <button type="submit">Go Back </form> 
+    {% endif %}
+    
+
+   {% if sender_messages_flag %}
+   <h2 align="center"> Sender History </h2>
+   <h2> {% if error %} {{error }} {% endif %} </h2>
+      <ul>
+      {% for match in sender_list %}
+      <li> An item is going to be posted from user : <b> {{ match.transporter.account }} </b> from: <b> {{ match.sender_details.from_ }} </b> to: <b> {{ match.sender_details.destination}} </b> for you! <br> Contact email is : <b> {{ match.transporter.email }} </b> </li>
+      {% endfor %} 
+      </ul>
+   {% endif %}
+   </div>
+</div>
+
+
+
+<script>
+function openDescription(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+function closeDescription(evt,cityName)
+{
+  var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+}
+</script>
+
+
+     
+</body>
+</html> 

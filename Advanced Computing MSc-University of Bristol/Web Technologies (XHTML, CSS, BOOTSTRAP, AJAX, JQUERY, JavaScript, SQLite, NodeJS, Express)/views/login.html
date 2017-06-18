@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ lang="en-GB" xml:lang="en-GB"> 
+<head>
+	<title>Login Page</title>
+	 <meta charset="utf-8"/>
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheets/svg.css"/>
+	<link rel="stylesheet" type="text/css" href="stylesheets/modal-style.css"/>
+	<link href="/images/package.png" rel="shortcut icon" type="image/x-icon" />
+	<script type="text/javascript" src="javascripts/svg.js"></script>
+	<script>
+	
+</script>
+</head>
+<body>
+
+	<!-- LOGO PRESENTATION -->
+	<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="60%" id="fly"/> 
+	<div class="container">
+	<div class="logo-container">
+		<div class="content">
+		<div class="globe"></div>
+		<h2 class="frame-1">A new website...</h2>
+		<h2 class="frame-2">Eases the transportation <br/>of goods...</h2>
+		<h2 class="frame-3">And its name is...</h2>
+		<h2 class="frame-4"><span>Transport</span><span>IT</span><span>.<br/>
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#loginModal">Login</button>
+		</span></h2>
+		</div>
+	</div>
+	</div>
+
+	
+		<div id="loginModal" class="modal fade" role="dialog">
+  			<div class="modal-dialog">
+    		<!-- Modal content-->
+    		
+    			<div class="modal-content">
+      				<!--Login Modal Header and Logo -->
+      				<div class="modal-header" align="center">
+       					 <button type="button" class="close" data-dismiss="modal">&#215;</button>
+        				<p>Transp<img src="svg/package.svg" width="50px" height="50px"/>rtIT</p>
+      				</div>
+
+      				<div id="forms">
+      				<!--Login Modal body & Input login forms -->
+      				<form method="post" id="login-form">
+      					<div class="modal-body">
+      				    	<legend>Enter your username and password:</legend> 
+          					<input type="text" placeholder="Username" name="account" required="required" /><br/>
+        					<input type="password" placeholder="Password" name="password" required="required"/><br/>
+							<div class="alert alert-danger" id="alert-msg-login" style="display: none;"></div>
+      					</div>
+	      				<!--Login Modal Footer Buttons -->
+    	  				<div class="modal-footer">
+        					<button type="submit" class="btn btn-primary" value="Login">Login!</button>
+        					<button id="register-btn" type="button" class="btn btn-link" >Register?</button>
+      					</div>
+      				</form>
+      				<!--Register Modal body & Input login forms -->
+      				<form method="post" action="/signup" id="register-form" style="display:none;" name="register-form">
+      					<div class="modal-body">
+      				    	<fieldset>
+          						<legend>Your basic info</legend>
+          						<input type="text" id="name" name="user_name" placeholder="Name" required="required"/>
+         						<input type="text" id="surname" name="user_surname" placeholder="Surname" required="required"/> 
+        					</fieldset>
+
+					        <fieldset>
+					          	<legend>Your account</legend>
+					          	<input type="text" id="name" name="user_username" placeholder="Username" required="required"/>
+					          	<input type="password" id="password" name="user_password" placeholder="Password" required="required"/> <div class="alert alert-danger" id="alert-msg" style="display: none;"></div>
+					        </fieldset>
+					        <fieldset>
+					          	<legend>Contact Details</legend>
+					          	<input type="email" id="mail" name="user_email" placeholder="Email" required="required"/>
+					          	<input type="text" id="cellphone" name="user_cellphone" placeholder="Cellphone" required="required"/>
+					          	<input type="text" id="address" name="user_address" placeholder="Address" required="required"/>
+					        
+					        </fieldset>
+
+					        <fieldset>
+						          <legend>Your Photo</legend>
+                      <p style="padding-left: 125px;">
+                      <input type="file" name="ID_photo" id="ID_photo" accept="image/*"  required="required"/></p>                      
+					        </fieldset>
+        				
+      					</div>
+	      				<!--Register Modal Footer Buttons -->
+    	  				<div class="modal-footer">
+        					<button type="submit" class="btn btn-primary" value="Login">Submit!</button>
+        					<button id="back-login-btn" type="button" class="btn btn-link" >Back to Login?</button>
+      					</div>
+      				</form>
+
+
+      			</div>
+    			</div>
+
+  			</div>
+		</div>
+
+	<script type="text/javascript" src='javascripts/modal-control.js'></script>	
+
+
+</body>
+</html>

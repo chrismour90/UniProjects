@@ -1,0 +1,48 @@
+# Christos Mourouzi
+# user id: cm16663
+# canditate number: 33747
+# email: cm16663@my.bristol.ac.uk
+
+#!/bin/bash
+
+#PBS -N d2q9-bgk
+#PBS -joe
+#PBS -o d2q9-bgk.out
+#PBS -q teaching
+#PBS -l epilogue=~ggdagw/epilogue.sh
+#PBS -l nodes=1:ppn=16,walltime=00:15:00
+
+#! Mail to user if job aborts
+#PBS -m a
+
+#! application name
+application="./d2q9-bgk"
+
+#! Run options for the application
+options="input_256x256.params obstacles_256x256.dat"
+
+# load icc 15
+module add languages/intel-compiler-15
+
+###############################################################
+### You should not have to change anything below this line ####
+###############################################################
+
+#! change the working directory (default is home directory)
+
+cd $PBS_O_WORKDIR
+
+echo Running on host `hostname`
+echo Time is `date`
+echo Directory is `pwd`
+echo PBS job ID is $PBS_JOBID
+echo This jobs runs on the following machines:
+echo `cat $PBS_NODEFILE | uniq`
+
+numnodes=`wc $PBS_NODEFILE | awk '{ print $1 }'`
+
+export OMP_NUM_THREADS=$numnodes
+export OMP_PROC_BIND=TRUE
+
+#! Run the executable
+$application $options

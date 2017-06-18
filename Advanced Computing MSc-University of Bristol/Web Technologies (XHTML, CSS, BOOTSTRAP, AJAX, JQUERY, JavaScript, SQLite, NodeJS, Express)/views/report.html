@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ lang="en-GB" xml:lang="en-GB"> 
+<head>
+    <title>Report</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap-social.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css"/>
+</head>
+<body>
+
+ <!-- NAVIGATION BAR DECLARATION -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/mainpage">TransportIT.</a>
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <!-- The style of the list is nav navbar-nav -->
+                <ul class="nav navbar-nav">
+                 <!-- We are currently in the home page so the home link must be coloured differently. Therefore it should be styled as active -->
+                    <li><a href="/mainpage">
+                    <!-- We always include glyphicons in span elements -->
+                    <span class="glyphicon glyphicon-home" aria-hiden="true"></span> Home</a></li>
+                    
+                    <li><a href="/transporter" >Transport</a></li>
+                    <li><a href="/sender" >Send</a></li>
+
+                    <!-- INCLUDE A DROPDOWN TO THE LIST -->
+                    <li class=" active dropdown">
+                    <!-- Check out all the info that you have included to declare this element -->
+                    <a href="/mainpage/idea" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-list-alt" aria-hidden="true"> </span>
+                    About Us<span class="caret"></span></a>
+                    <!-- CONTENTS OF THE DROPDOWN -->
+                    <ul class="dropdown-menu">
+                        <li><a href="/mainpage/idea">The idea</a></li>
+                        <li><a href="/mainpage/report"><span class="glyphicon glyphicon-info-sign" aria-hiden="true"></span>The report</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                     <li><a href="/profile"><span class="glyphicon glyphicon-user" aria-hidden="true"> </span>Your Profile</a></li>
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"> </span>Logout</a></li>
+         
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+        <header class="jumbotron">
+        <!-- We apply class jubmotron because in this section we want to showcase the company's name -->
+        <!-- Main component for a primary marketing message or call to action -->
+
+        <div class="container">
+            <div class="row row-header" >
+                <!-- COMPANY'S NAME -->
+                <div class="col-xs-12 col-sm-8">
+                    <h1>The report</h1>
+                    <p style="padding:40px;"></p>
+                    <p>The application created for the assignment of COMSM0104 unit demands a well coordinated front-end and back-end design. Both of them are thoroughly expained in the following sections.</p>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- The main body of the webpage -->
+
+    <div class="container">
+        <div class="row row-content">
+            <!-- HTML  -->
+            <div class="col-xs-12 col-sm-3">
+                    <h3 align="left">HTML: A</h3>
+                    <p style="padding:20px;"></p>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                    <p align="justify">
+                        The content of the web application is delivered in seven html pages. These pages are the login.html, the mainpage.html, the transporter.html, the sender.html, the idea.htm, the report.html and the profile.html. All of them include call an xhtml validation provided by www.w3.org to make sure that the content respects the markup standards. Furthermore, validation is also accomplished on the server side by adding content type as application/xhtml+xml in the head of the document but this part is more deeply explained in the server section of this report.
+                        <br/>
+                        All the web pages generated for the purpose of this assignment are original, meaning that the authors have created all the components themselves. In additions the body of the six pages that are responsible to showcase the heart of the application share the same organisation. They are consisted of a navigation  bar that facilitates the user's navigation through the content of the application , a jumbotron section that emphasises on the content of the current page the the user is navigating, the main container that displays the interactivity of each page and the footer of the page that provides useful links. This uniformity among the web pages facilitates the use of the application and helps the user to explore the application's components without having to find out what to do every time he/she enters a new page.The design of the webpages was a very important issue that the authors had to address since their content had to be straightforward, easy to understand and interact with. 
+                        <br/>
+                        It is evident that the web pages delivered by this application have a rich Document Object Model.
+                        The elements are either dynamically created once a response from the database is received by JS or statically created by HTML. The dynamic creation arose issues related to handling the correct positioning of the dynamic elemnts inside the static web page. The issues were resolved by giving distinctive id's to each dynamic elements' container. In addition the components of each page have different styling classes in order to be presented in a more discrete and sophisticated manner as explained in depth in the following section.
+                    </p>
+            </div>
+        </div>
+
+        <!-- CSS -->
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3">
+                    <h3 align="left">CSS: A</h3>
+                    <p style="padding:20px;"></p>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                    <p align="justify">
+                        Multiple styling rules had to be applied in order to underline the differences in the content delivered by this application.As mentioned before the focus concering the front-end design was on the uniformity of the content delivered. Therefore there are css rules that apply to all the six pages created for this application. Nevertheless, the interactive elements that exist in the pages needed specific styling as well and for that reason stylesheets were created in order to address the specific characteristic of the interactive elements of each web page. 
+                        <br/>
+                        This web application uses Bootstrap front-end framework to efficiently deliver its content. Thanks to this framework it was possible to design the application under the mobile-first approach. The classes responsible for taking into consideration the size of the browser window and adapting the content of the page to it are added in all the Document Object Model elements.Therefore we managed to make the delivered contents resizable.Furthermore, glyphicons and favicons are added in the navigation bar, the profile card and the footer of the page to provide a visual representation of the content presented in these sections. In many cases some of the Bootstap's styling rules are overwritten in order for them to best serve the purpose of our application.  
+                        <br/>
+                        In the login page of our application the user can enjoy a letter animation that describes the concept of this project.This animation was created using CSS3 styling rules. These styling rules manipulate the letters and make them fade in, blur and fade out. The animation is timed so that it is synchronised with the svg animation on the same page. Since browsers behave differently to CSS3 animation it was necessary to include all the commands for each browser on the stylesheet file responsible for this animation. The stylesheet that contains the rules responsible for this animation is called svg.css. 
+                        <br/>
+                        In the stylesheet files it is attempted to ensure the uniformity among the style of the pages that the deliver the content of the application.The coloring of the jumbotron section of the pages is performed in main.css file and it applies a gradient in order to smooth the initial shade of blue presented in this section and gradually present the different shades of it. All the text content presented in the pages has the same formatting and size. The application of all the styling rules on the aforementioned html elements helped in presenting coherent and reasonable content.
+                    </p>
+            </div>
+        </div>
+
+        <!-- JS CLIENT -->
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3">
+                    <h3 align="left">JS: A</h3>
+                    <p style="padding:20px;"></p>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                    <p align="justify">
+                        The client-side javascript that was implemented for this application focused on checking the users input to make sure it is valid, animate the created elements and provide interactivity and communication with the back-end. In more detail if a user tries to sign up to the application the password he/she provides needs to be 8 characters long. That input is read and manipulated accordingly by modal-control.js file. Furthermore the resizing and the animation of the modal that contains the sign up and log in forms is controlled by the same file. 
+                        <br/>
+                        Another example where the user's input is manipulated by js files is in the cases of completing the transporter and sender forms. In these cases the date input field is automatically filled if the user picks a date that is previous to the current date. Additionaly in the case of the sender form, if the user picks the urgent option the date fields are automatically filled setting the time period to 2 days starting from the current date.The js files responsible for the previous tasks are sender-date.js and transporter-date.js.
+                        <br/>
+                        When the user searches for available transporters the client-side js reads the back-end response to this query and appends it to the html document. It dynamically creates a table that contains the search results if the search has been successfull or it creates an alert to inform the user that the search returned no results. Furthermore, one more example showing the communication of the client-side js with the back-end is in the case when a sender or a transporter want to delete one of their transactions. In that case the client side script sends to the back-end a value to signal the transaction that is going to be deleted. The scripts responsible for these tasks are modal-control-send.js and mainpage-moda.js
+                        <br/>
+                        The resizing of the user image on click is also manipulated by a client-side script. That script is responsible for activating and de-activating the modal containing the enlarged image of the user and its name is profile.js. Conclusively, all the modals used by this application are animated using client-side scripts in order to facilitate the smooth transition of the displayed content. 
+                    </p>
+            </div>
+        </div>
+
+        <!-- PNG -->
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3">
+                    <h3 align="left">PNG: B</h3>
+                    <p style="padding:20px;"></p>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                    <p align="justify">
+                         The background in the log in page is a png image manipulated in Gimp. The initial image was in jpg format. For that reason it was necessary to convert it to png and then manipulate it with the corresponding software. A filter was applied in order to darken the image and make the clouds and other elements that appear on top of it stand out. In addition as mentioned in idea.html that thoroughly explains the idea behind this application the user uploads an image to the database once he/she logs in. This image file is converted to png on the server side and then displayed to the user on the profile.html page. On this page the image has a fixed size and its style is modified once the user places the mouse on top of it. A gradient is applied to the image in order to blur it and give an interactive feeling to the user. Furthermore the dimensions of the image dynamically increase once the user clicks it. 
+                    </p>
+            </div>
+        </div>
+
+        <!-- SVG -->
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3">
+                    <h3 align="left">SVG: A</h3>
+                    <p style="padding:20px;"></p>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                    <p align="justify">
+                        For this section an svg image representing a gift turned into the logo of our application. This svg image was copied from the Internet and then manipulated in Inkscape in order to remove the shadow that used to be behind it. The colouring of the image was altered as well, the ribbon was coloured light red and filters were applied in the image to increase the contrast of colours. This file is integrated to many parts of application. It is always present on the header of the  created input boxes and it is animated in the log in page.
+                        <br/>
+                        The clouds present on the log in page of our page are dynamically created svg elements as well. These elements describe the path of a cloud-like drawing. They were implemented using the library snap.js library that contains numerous functions for grouping and animating svg elements and that extends raphael.js library. The animation of the gift/application logo on the log in page is also created thanks to this library. The coordinates of the path that the svg image has to follow are inserted in the code and then a function forces the svg image to gradually alter its coordinates along this path.The code for this implementation is included in svg.js file.
+                    </p>
+            </div>
+        </div>
+
+        <!-- Server  -->
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3">
+                    <h3 align="left">Server: A</h3>
+                    <p style="padding:20px;"></p>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                    <p align="justify">
+                        The server app that is used for delivering the webpages was initially created with the express generator. So, the server can be started with the command npm start from the root folder. The server listens to two ports, 8080 (http protocol) and 8443 (https protocol). All pages are redirected to port 8443 so secure connection is always established. For that reason a self-signed certificate (/bin/server.crt) was created using OpenSSL and was manually installed as trusted so the browsers would not complain about it. 
+                        <br/>
+                        There are two ways to install the certificate in a Windows 10 machine: 
+                        <ul>
+                            <li>start/run/mmc.exe  → File/Add/Remove Snap-in → Add Certificates from the list → OK  → Select Certificates under Console Root → Right Click on Trusted Root Certification Authorities → New Task/Import (import /bin/server.crt) </li>
+                            <br/>
+                            <li>start/run/mmc.exe  → File/Add/Remove Snap-in → Add Certificates from the list → OK  → Select Certificates under Console Root → Right Click on Trusted Root Certification Authorities → New Task/Import (import /bin/server.crt) </li>
+                        </ul>
+                        <br/>
+                        After installing the certificate, secure connection was tested in IE Edge, Google Chrome, Opera and Firefox. Only Firefox could not establish the secure connection because it uses a different certificate stores and does not accept self-signed certificates.
+                        <br/>
+                        The pages are delivered via express router modules and rendered as html files using the ejs module. Before of each response the url is validated and served as xhtml by setting the header to Content-Type=application/xhtml + xml. If a url is tried to be requested with a trailing slash or more is redirected to the proper url (without the slashes) so it can be protected by a hacker attack (// case as express handles ./ case). Also for extra security the server uses the helmet module which protects the web application from some well-known web vulnerabilities by setting HTTP headers appropriately.
+                        <br/>
+                        Session is also used by the server in order to easily identify at each request the username, email, and id of a logged in user without asking the database continuously. When the user logs out the session is destroyed.
+                        <br/>
+                        The server also controls the application’s database by importing and exporting data to it. This content is dynamically (e.g. on signup if a username already exists the server send an error message to be shown to the client, etc) handled to each request. 
+                         <br/>
+                        It could be said that the server is the mind behind the web application as it is responsible for delivering or redirecting the web pages, handling the database queries, storing the data etc.
+                    </p>
+            </div>
+        </div>
+        <!-- Database -->
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3">
+                    <h3 align="left">Database: A</h3>
+                    <p style="padding:20px;"></p>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                    <p align="justify">
+                        The main idea of the web application is based on the communication between users as senders and transporters. For that reason an embedded SQLite database was created. This database stores each user’s details, transporters’ journeys information and matching confirmation details. 
+                         <br/>
+                        When a user signs up he can store his details only if the chosen username or email do not exist. Also, the password is hashed using the bcrypt module and is stored as encrypted for extra security. The image chosen is not stored in the database but instead is saved in the server. After the photo is uploaded is renamed as ‘username.png’ so it can be easily restored when requested.
+                         <br/>
+                        After a user is logged in he can update his details only for the password, phone or email fields. This happens for keeping the web application safe from spammers, fake accounts or repetitive user accounts.
+                         <br/>
+                        The transporter table contains all the details of a transporter’s journey. Also a foreign key is used to reference the user details of a transporter.
+                         <br/>
+                        A sender can search for transporters travelling within a chosen time period for a specific trip. If a user selects  a transporter to transfer an item for him a sender-transporter matching is stored in a database table. Also a foreign key is used in this table to reference the transporter’s journey table and the sender’s user details.
+                         <br/>
+                        Every time a user is logged in, the main page shows all the corresponding matching details for that user. If he is declared as sender all selected transporters are shown in a table and if he is declared as a transporter all senders that selected him are shown. A user can also cancel a matching (deleting it from the database) if he wants to.
+                         <br/>
+                        The database was implemented to avoid redundancy by using foreign keys. All queries are executed as parameterised, so that SQL injections can be prevented. Also the web application was tested with the sqlmap tool (http://sqlmap.org/). The result showed that our web application is protected by common database hack methods.
+
+                    </p>
+            </div>
+        </div>
+
+        <!-- Dynamic Content -->
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3">
+                    <h3 align="left">Dynamic Content: A</h3>
+                    <p style="padding:20px;"></p>
+
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                    <p align="justify">
+                        The web application handles input or export data dynamically either from the client side or from the server side.
+                         <br/>
+                        When a user tries to login he submits data using a form. The server process the data using the bodyparser module and responses with an error message if a user does not exist or if the password given is wrong and with a flag variable if everything is correct. This response is handled in the client side as the results are display in modals. If an error message exists then is shown in the modal body and if everything is correct there is a redirection to the main page. 
+                        <br/>
+                        The same method is used when a user signs up. Because there is a need of an image upload an AJAX post call is executed with the server processing the data using the formidable module as the form submitted is of type=multipart/form-data. If a user or an email do not exist in the database, then the server responses with an error message. If the signup is successful then the user is redirected to the login modal window.
+                         <br/>
+                        After a user logs in, the content in the main page is displayed by assigning the results of the database query to ejs variables. If a user wants to cancel a matching then the id of that matching is dynamically retrieved and sent to the server.
+                         <br/>
+                        In the profile update page after a submission is happened the server renders the same page by assigning the profile fields to ejs variables.
+                         <br/>
+                        In the sender page, when a search happens the table containing the transporters is dynamically built in the client side using JQuery. If the search contains no data then a message is displayed to the user. When a transporter submits its trip details a success message is shown to him.
+
+                    </p>
+            </div>
+        </div> 
+
+        <!-- Depth -->
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3">
+                    <h3 align="left">Depth: A</h3>
+                    <p style="padding:20px;"></p>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                    <p align="justified">
+                       Conclusively, the front and back end design of TransportIt web application has been thoroughly explained. Both matters have been studied and implemented in depth as described by the corresponding previous sections in order to deliver the content in the best possible way. The application can be improved in many ways in both designs.Some of them are advancing the processes that are happen in the database, increase the functionality of the pages, permit to the user to sign up using other accounts such as his accounts on facebook or google. Nevertheless, this attempt succeds in delivering consistent and reasonable content that is described by the main idea behind the application.
+                    </p>
+            </div>
+        </div>       
+  </div>       
+
+
+
+
+
+
+    <!-- The main body of the webpage -->
+        <footer class="row-footer">
+       
+         <div class="container">
+            <div class="row ">             
+                <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/mainpage">Home</a></li>
+                        <li><a href="/transporter">Transporter</a></li>
+                        <li><a href="/sender">Sender</a></li>
+                        <li><a href="/mainpage/idea">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+                      Senate House,<br/>
+                      Tyndall Ave,<br/>
+                      Bristol BS8 1TH<br/>
+                      <i class="fa fa-envelope"></i> : <a href="mailto:transportit17@gmail.com">transportit17@gmail.com</a>
+                   </address>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div  class="nav navbar-nav" style="padding: 40px 10px;">
+                        <a class="btn btn-social-icon btn-youtube" href="https://youtu.be/oJDUAFW0LzE"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <!-- <p style="padding:10px;"></p> -->
+                    <p align="center">© Copyright 2017 TransportIT.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

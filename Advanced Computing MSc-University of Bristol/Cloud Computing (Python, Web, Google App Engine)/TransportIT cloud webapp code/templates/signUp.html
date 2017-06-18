@@ -1,0 +1,61 @@
+  <html>
+  <head>
+        <meta charset="utf-8">
+        <title>sign Up</title>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheet/signUp.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+       
+    </head>
+    <body>
+        
+      <div class="background-image"></div>
+
+
+        <div class="signUp">  
+        <form method="post" enctype="multipart/form-data" >
+        <h1>Transport<span>IT</span></h1>
+        <h2>Sign Up</h2>
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="user_name" required>
+          <label for="name">Surname:</label>
+          <input type="text" id="name" name="user_surname" required> 
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="number">2</span>Your TransportIT account</legend>
+          <label for="name">Username:</label>
+          <input type="text" id="name" name="user_username" required>
+          <label for="password">Password:</label>
+          <input type="password" id="name" name="user_password" required> 
+         {%if error %} <h2  class="warning"> {{ error }} </h2> {% endif %}
+        </fieldset>
+        
+        <fieldset>
+          <legend><span class="number">3</span>Contact Details</legend>
+          <label for="mail">Email:</label>
+          <input type="email" id="mail" name="user_email" required>
+          <label for="cellphone">Cellphone:</label>
+          <input type="text" id="cellphone" name="user_cellphone" required>
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="user_address" required>
+        
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="number">4</span>Your ID</legend>
+          <label for="photo">Upload a photo of your ID card:</label>
+          <input type="file" id="ID_photo" name="ID_photo" accept="image/*" required>
+        
+        </fieldset>
+
+       
+        <button type="submit">Sign Up</button>
+        <button type="submit" onclick="window.location='/login'; return false;"  >Go Back </button>
+      </form>
+      </div>
+      
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<ASSEMBLER_INFO>
+ <WORKING_DIR>c:\</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes\m16def.inc</FILE>
+ </INCLUDED_FILES>
+ <LABELS>
+  <reset><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>16</LINE></reset>
+  <ch_sw><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>28</LINE></ch_sw>
+  <inc_counter><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>41</LINE></inc_counter>
+  <DLY0><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>46</LINE></DLY0>
+  <DLY1><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>52</LINE></DLY1>
+  <DLY2><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>58</LINE></DLY2>
+  <DLY3><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>64</LINE></DLY3>
+  <time_delay_05s><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>157</LINE></time_delay_05s>
+  <sw0><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>70</LINE></sw0>
+  <sw1><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>92</LINE></sw1>
+  <sw2><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>99</LINE></sw2>
+  <sw3><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>120</LINE></sw3>
+  <loop_sw0><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>76</LINE></loop_sw0>
+  <led_off0><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>87</LINE></led_off0>
+  <time_delay_3s><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>171</LINE></time_delay_3s>
+  <wait_sw7><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>108</LINE></wait_sw7>
+  <DLY7><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>114</LINE></DLY7>
+  <led_on1s><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>130</LINE></led_on1s>
+  <exit><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>147</LINE></exit>
+  <led_off1s><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>140</LINE></led_off1s>
+  <end><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>152</LINE></end>
+  <outer_loop2><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>160</LINE></outer_loop2>
+  <inner_loop2><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>163</LINE></inner_loop2>
+  <outer_loop><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>174</LINE></outer_loop>
+  <inner_loop><FILE>C:\Documents and Settings\user.CSAL_PC5\Desktop\Ergasia2\Ergasia2.asm</FILE><LINE>177</LINE></inner_loop>
+ </LABELS>
+</ASSEMBLER_INFO>

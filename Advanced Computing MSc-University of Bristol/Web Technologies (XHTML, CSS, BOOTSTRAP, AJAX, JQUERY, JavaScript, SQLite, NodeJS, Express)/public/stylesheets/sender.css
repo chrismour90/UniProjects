@@ -1,0 +1,59 @@
+table{
+    font-family: arial;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+thead{
+    background-color: #1a53ff;
+    color:floralwhite;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*.wrapper{
+    width:200px;
+    clear: both;
+}
+
+
+.small{
+	width: 20px;
+    background: #0066ff;
+    float: left;
+}
+
+.medium{
+	width: 70px;
+    background: #0066ff;
+    float: left;
+}
+
+.large {
+    width: 100px;
+    
+    background: #0066ff;
+    float: left;
+    
+}
+
+.small .medium .large :hover {
+	 background-color: #003380;
+    -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+  -webkit-transform: rotate(180deg); 
+    transform: rotate(180deg);
+    -webkit-transition: -webkit-transform 2s; 
+    transition: transform 2s;
+}*/

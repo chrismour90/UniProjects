@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ lang="en-GB" xml:lang="en-GB"> 
+<head>
+	<title>Sender</title>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  	<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-social.css"/>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" type="text/css" href="stylesheets/main.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/modal-style.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/sender.css"/> 
+</head>
+<body>
+
+ <!-- NAVIGATION BAR DECLARATION -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/mainpage">TransportIT.</a>
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <!-- The style of the list is nav navbar-nav -->
+                <ul class="nav navbar-nav">
+                 <!-- We are currently in the home page so the home link must be coloured differently. Therefore it should be styled as active -->
+                    <li ><a href="/mainpage">
+                    <!-- We always include glyphicons in span elements -->
+                    <span class="glyphicon glyphicon-home" aria-hiden="true"></span> Home</a></li>
+                   	
+                   	<li><a href="/transporter" >Transport</a></li>
+                   	<li class="active"><a href="/sender" >Send</a></li>
+
+                    <!-- INCLUDE A DROPDOWN TO THE LIST -->
+                    <li class="dropdown">
+                    <!-- Check out all the info that you have included to declare this element -->
+                    <a href="/mainpage/idea" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-list-alt" aria-hidden="true"> </span>
+                    About Us<span class="caret"></span></a>
+                    <!-- CONTENTS OF THE DROPDOWN -->
+                    <ul class="dropdown-menu">
+                        <li><a href="/mainpage/idea">The idea</a></li>
+                        <li><a href="/mainpage/report"><span class="glyphicon glyphicon-info-sign" aria-hiden="true"></span>The report</a></li>
+                    </ul>
+					</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                	 <li><a href="/profile"><span class="glyphicon glyphicon-user" aria-hidden="true"> </span>Your Profile</a></li>
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"> </span>Logout</a></li>
+         
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+        <header class="jumbotron">
+        <!-- We apply class jubmotron because in this section we want to showcase the company's name -->
+        <!-- Main component for a primary marketing message or call to action -->
+
+        <div class="container">
+            <div class="row row-header" >
+                <!-- COMPANY'S NAME -->
+                <div class="col-xs-12 col-sm-8">
+                    <h1>Sender</h1>
+                    <p style="padding:40px;"></p>
+                    <p>Do you want to send items to your friends and family? <br/> This is the right place to be!</p>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- The main body of the webpage -->
+    <div class="container">
+        <div class="row-content">
+            <div class="col-xs-12 col-sm-8" >
+                    <h3 align="left">Shipment Details</h3>
+                    <br/>
+                    <p>To become a sender you have to fill in the details related to the item that will be sent and its journey. Click the following button and give us the corresponding information . In this way we will be able to search in our database and propose possible transporters that match the previous description.</p>
+                    <br/>
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#sendModal">Item Info</button>
+                </div>
+        </div>
+    </div>
+
+
+    <!-- The modal that fills in the sender  information -->
+     <div id="sendModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <!-- Modal content-->
+            
+                <div class="modal-content">
+                    <!--Search Modal Header and Logo -->
+                   <div class="modal-header" align="center">
+       					 <button type="button" class="close" data-dismiss="modal">&#215;</button>
+        				<p>Transp<img src="svg/package.svg" width="50px" height="50px"/>rtIT</p>
+      				</div>
+
+                    <div id="forms">
+                     <form method="post" id="sender-form" action="/sender" >
+                        <div class="modal-body">
+                            <fieldset>
+                              <legend>The item's journey</legend>
+                              <label for="from">From:</label>
+                              <input type="text" id="from" name="sender_from" onblur="upper(this.id)" placeholder="e.g. BRISTOL" style="text-transform:uppercase"  required="required"/><br/>
+                              <label for="to">To:</label>
+                              <input type="text" id="to" name="sender_to" onblur="upper(this.id)" placeholder="e.g. NEW YORK" style="text-transform:uppercase" required="required"/> 
+                            </fieldset>
+
+                            <fieldset>
+                              <legend>Arrival</legend>
+                              <label for="time">Urgent? (search for transporters within 2 days)</label>
+                              <input type="radio" id="urgentyes" name="urgent" value="yes" onclick="autofill()"/> Yes 
+                              <input type="radio" id="urgentno" name="urgent" value="no" onclick="empty()"/> No <br/>
+                              <label for="date">Approximately when you want the item to be delivered?</label><br/>
+                              <label for="date">From:</label>
+                              <input type="date" onchange="checkDate()" id="dateFrom" name="sender_from_date" required="required"/>
+                              <label for="date">Until:</label>
+                              <input type="date" onchange="checkDate()" id="dateUntil" name="sender_until_date"  required="required"/>
+                            </fieldset>
+
+                            <fieldset>
+                              <legend>Dimensions of the item</legend>
+                              <label for="weight">Max weight to be carried in kilos:</label>
+                              <input type="number" step="0.1" id="weight" name="sender_weight" placeholder="e.g. 1" min="0" required="required"/>
+                              <label for="volume">Max volume to be carried in litres:</label>
+                                <input type="number" step="0.1" id="volume" name="sender_volume" placeholder="e.g. 0.1" min="0" required="required"/> 
+                            </fieldset>
+                        </div>
+					             	<div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" value="Login" id='search-btn'>Search!</button>
+                        </div>
+                    </form>
+
+                        <div id="search-results" style="display: none;">  
+                          <div class="modal-body">
+                          <p style="padding: 10px;"></p>
+                          <legend> Search Results</legend>
+						  <div id="final-results">
+                          
+						  </div>
+                        </div>
+						
+                      <!-- Modal Footer Buttons -->
+                          <div class="modal-footer">
+                              <button id="back-to-item-btn" type="button" class="btn btn-link" value="Select">Send another Item?</button>
+                          </div>
+                        </div>
+						
+						
+                  </div>
+                </div>
+            </div>
+
+     </div>
+
+
+        <footer class="row-footer">
+       
+       	 <div class="container">
+            <div class="row ">             
+                <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/mainpage">Home</a></li>
+                        <li><a href="/transporter">Transporter</a></li>
+                        <li><a href="sender">Sender</a></li>
+                        <li><a href="/mainpage/idea">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+		              Senate House,<br/>
+		              Tyndall Ave,<br/>
+		              Bristol BS8 1TH<br/>
+		              <i class="fa fa-envelope"></i> : <a href="mailto:transportit17@gmail.com">transportit17@gmail.com</a>
+		           </address>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div  class="nav navbar-nav" style="padding: 40px 10px;">
+                        <a class="btn btn-social-icon btn-youtube" href="https://youtu.be/oJDUAFW0LzE"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <!-- <p style="padding:10px;"></p> -->
+                    <p align="center">© Copyright 2017 TransportIT.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+<script type="text/javascript" src="javascripts/sender-date.js"></script>
+<script type="text/javascript" src="javascripts/modal-control-send.js"></script>
+
+</body>
+</html>

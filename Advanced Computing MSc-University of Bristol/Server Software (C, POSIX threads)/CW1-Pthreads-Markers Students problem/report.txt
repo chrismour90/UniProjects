@@ -1,0 +1,36 @@
+Christos Mourouzi
+Canditate No. : 33747
+cm16663@my.bristol.ac.uk
+
+Report- The project marking problem
+
+1. How you solved the problem of synchronizing your threads?
+
+I used a mutex and three condition variables (grab, ready, finish) for synchronising the threads in my program. Also the threads share between them some global variables: 1) a student list (size of no. of students) that holds which students entered the lab, 2) an array (size of no. of students) which holds the number of markers needed by a student (initialized with the value K for each student), 3) an array that shows if a student has finished or not their demo. 4) a variable (last_demo) that shows if there is a timeout, 5) an index that shows the current position of a student entering the lab, 6) another index that holds the position of the student that markers are assigned to.
+
+Firstly all threads are created. Students start to panick and markers enter the lab.
+
+By using the mutex and the condition variables markers and students are informed if some predicates values might have changed in order to proceed.
+
+A marker must wait for a. to be informed that he must be grabbed by a student, b. the demo to be finished 
+Predicates: 
+a. wait while current position of the last student that entered the lab is equal to the last student that is assigned to markers AND if there is still time for demo 
+b. wait until the demo is finished
+
+A student must wait to be informed that there are enough markers so he can start the demo
+Predicate: 
+wait while markers needed are not 0  and if there is still time
+
+When a student enters the lab saves himself in the students list and increases the index of the current position of the list. Then a student broadcasts a signal and informs everyone that he wants to be grabbed. The markers wait until there are available students to be assigned to. If there are enough students then markers one by one get the studentID and decrease the number of markers needed for that student. If there is no need for another marker (markers needed=0) then the last marker increases the index of the student that markers are assigned to and broadcast a signal to the student to start the demo. Then the student starts the demo if there is no timeout. When he finishes the demo he changes the state of him in the finished array and broadcast a signal to everyone that he is finished and exits the lab. If markers have not finish all of their jobs then they wait again for a next student to be assigned to, otherwise they exit the lab. 
+
+When a timeout occurs then the variable of last_demo changes to 1 and signals of all three condition variables are broadcasted to inform everyone waiting in the lab to exit. If a demo is already started, when it is finally finished then the student and the markers leave the lab.
+
+2. Why you believe your method is correct or, if you don't, how it could be made correct?
+
+The output results and the order of the print outputs are correct. I assumed that a student can take the markers randomly and not in a continuous order (not grabbing marker 0 then marker 1 etc). This would create a wasteful wait for a specific marker to be free. The student grabs K markers, starts the demo and when he finishes he exits the lab. Then markers print out that they have finished with this student and wait for another one to grab them. Also at the timeout everyone exits the lab except those who already started a demo. If a marker at the end of the last possible demo finished all of his jobs then he prints out that he has finished his jobs and exits the lab instead of printing that his exiting due to a timeout. Everyone else prints out that they are exiting because there is no more time for a demo.
+
+3. Why you believe your method is efficient or, if you don't, how it could be made efficient?
+
+I believe my method is efficient because is thread-safe by using mutex locks and also not busy-wait by using condition variables. At the beginning, a method with many mutexes was tried but it always ended up with deadlocks. Also by having many mutex locks/unlocks then the program would slow down. Fewer mutexes give faster execute times while they are being used efficiently. e.g if many threads trying to lock the same mutex at the same time then this would also slow down the program. Instead of using broadcast, signal could be used. Broadcast wakes up all of the threads waiting for a signal, while you need to wake up a selected group of threads. In this case that we do need to wake up more threads (K markers) than one then broadcast is necessary and more efficient.
+
+Errors are checked for memory allocation, pthread condition waits, mutex locks/unlocks, create and join. They are all assumed as errors that the program should be killed and not continue as they are considered as critical errors especially condition waits and mutex locks/unlocks. Finally the program frees up the memory and destroys the mutex and the condition variables.

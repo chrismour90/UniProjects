@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TransportIT Main Page</title>
+  <link rel="stylesheet" type="text/css" href="/static/stylesheet/mainPage.css">
+ 
+</head>
+<body>
+
+<ul class="tab">
+  <li><div class="header">Transport<span>IT</span></div></li>
+  <li><a href="senderSignIn.html" class="tablinks" onmouseover="openDescription(event, 'Sender')" onmouseleave="closeDescription(event,'Sender')" onclick="window.location='/sender'; return false;" >Sender</a></li>
+  <li><a href="transporterSignIn.html" class="tablinks" onmouseover="openDescription(event, 'Transporter')" onmouseleave="closeDescription(event,'Transporter')" onclick="window.location='/transporter'; return false;">Transporter</a></li>  
+ <li id='last'><a href="#" class="tablinks" onmouseover="openDescription(event, 'LogOut')" onmouseleave="closeDescription(event,'LogOut')" onclick="window.location='/logout'; return false;"  ><img src="/static/img/logout.png" alt='LogOut'></a></li>  
+ <li id="last"><a href="changeDetails.html" class="tablinks" onmouseover="openDescription(event, 'ChangeYourDetails')" onmouseleave="closeDescription(event,'ChangeYourDetails')" onclick="window.location='/ChangeDetails'; return false;" ><img src="/static/img/edit.png" alt='edit'></a></li>
+</ul>
+
+<div class="spaceDescription">
+<div id="Sender" class="tabcontent">
+  <h3>Sender</h3>
+  <p>Declare the characteristics and the destination of the item.</p>
+</div>
+
+<div id="Transporter" class="tabcontent">
+  <h3>Transporter</h3>
+  <p>Declare your journey and the maximum load you can transport.</p> 
+</div>
+
+<div id="LogOut" class="tabcontent">
+  <h3>LogOut</h3>
+  <p>Leaving TransportIT? Make sure that your data is accurate.</p>
+</div>
+
+<div id="ChangeYourDetails" class="tabcontent">
+  <h3>Change your details</h3>
+  <p>Make changes in your account to keep it up to date.</p>
+</div>
+</div>
+
+
+<div class="container">
+  <div class="item" id="queries"><div class="subHeader">Notifications <span>for</span> {{username}}!!</div><br>
+    {% if senderflag %}
+    <p> 
+     <table>
+      <tr> 
+      <th>Account</th> <th>Date </th> <th>Time</th> <th>From</th> <th>To</th> <th>By</th> <th>Weight</th> <th>Volume</th>   
+      </tr>
+  
+      {% for t in que %}
+      <tr>
+       <td>{{ t.user.account }} </td> <td>{{ t.arrival_date|date:"D d M Y" }} </td> <td>{{ t.arrival_time|date:"H:i" }} </td>
+       <td>{{ t.from_ }} </td> <td>{{ t.destination }} </td> <td>{{ t.transport_means }} </td> <td>{{ t.max_weight }} </td> <td>{{ t.max_dimension }} </td> 
+       <td>
+       <form method="post" action="/matching">
+       <input type="hidden" name="match_name" value="{{ t.user.account }}">
+       <input type="submit" value="Select transporter" class="btn btn-primary">
+       </form> 
+       </td> 
+      </tr>
+      {% endfor %}
+      </table>
+     </p>
+    {% endif %}
+
+    {%if error %}  <h2> {{ error }}</h2>{% endif %}
+
+    {% if transporterflag %}
+      <h2 align="center">
+      Hello Transporter. Click here to check your messages! <form method="post" action="/matching"> <button type="submit"> Check your messages </button> 
+      {% endif %}
+      </h2>      
+      
+
+  </div>
+  
+</div>
+
+
+
+<script>
+function openDescription(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+function closeDescription(evt,cityName)
+{
+  var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+}
+</script>
+
+
+     
+</body>
+</html> 

@@ -1,0 +1,109 @@
+
+.row-header{
+	margin: 0px auto;
+	padding: 0px auto;
+}
+
+.row-content{
+	margin: 0px auto;
+	padding: 50px 0px 50px 0px;
+	border-bottom: 2px ridge;
+	min-height: 400px;/*the height of each row should be at least 400px*/
+	text-align: left;
+}
+
+.row-content:last-of-type{
+	margin: 0px auto;
+	padding: 50px 0px 50px 0px;
+	border-bottom: 0px ridge;
+	min-height: 400px;/*the height of each row should be at least 400px*/
+	text-align: left;
+}
+
+.row-footer{
+	background-color: #AfAfAf;
+	margin:0px auto;
+	padding: 20px 0px 20px 0px;
+}
+
+.jumbotron{
+	padding: 70px 30px 70px 30px;
+	margin: 0px auto;
+	background: linear-gradient(to bottom, #1c41b0 0%, #99ccff 100%);
+	color:floralwhite;
+}
+
+address{
+	font-size: 80%;/*Reduce the font size of the letters in the address elemnent*/
+	margin: 0px;
+	color:#0f0f0f;
+}
+
+body{
+	/*So that the body is displayed always under the navbar that is 50 px*/
+	padding: 50px 0px 0px 0px;
+	z-index: 0;
+	font-family: "Arial";
+
+}
+
+
+.navbar-inverse{
+	background: #4169E1 ;
+}
+/*Event listeners*/
+.navbar-inverse .navbar-header .navbar-brand{
+	float: left;
+	font-size: 35px;
+	color:#DCDCDC;
+}
+
+
+.navbar-inverse .navbar-nav >li>a{
+	color:#DCDCDC;
+}
+
+/*Case an ancor is active*/
+.navbar-inverse .navbar-nav > .active > a ,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus{
+	background:#0000CD	;
+	
+}
+
+
+
+.navbar-inverse .navbar-nav > .open > a ,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus{
+	background:	#0000CD ;
+}
+
+
+.navbar-inverse .navbar-nav  .open .dropdown-menu > li > a ,
+.navbar-inverse .navbar-nav  .open .dropdown-menu{
+	background-color:#0000CD ;
+	color:#DCDCDC;
+}
+
+.navbar-inverse .navbar-nav  .open .dropdown-menu > li>a:hover{
+	color: #000000;
+}
+
+/*----------------------------------response--tables-------------------------------------------------*/
+
+table{
+    font-family: arial;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+thead{
+    background-color: #1a53ff;
+    color:floralwhite;
+}
+
+
+

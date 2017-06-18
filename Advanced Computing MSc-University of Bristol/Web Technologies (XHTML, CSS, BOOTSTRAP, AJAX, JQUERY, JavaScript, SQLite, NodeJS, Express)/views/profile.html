@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ lang="en-GB" xml:lang="en-GB"> 
+<head>
+	<title>Profile</title>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  	<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-social.css"/>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" type="text/css" href="stylesheets/main.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/modal-style.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/profile.css"/>
+    <link href="/images/package.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+
+ <!-- NAVIGATION BAR DECLARATION -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/mainpage">TransportIT.</a>
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <!-- The style of the list is nav navbar-nav -->
+                <ul class="nav navbar-nav">
+                 <!-- We are currently in the home page so the home link must be coloured differently. Therefore it should be styled as active -->
+                    <li ><a href="/mainpage">
+                    <!-- We always include glyphicons in span elements -->
+                    <span class="glyphicon glyphicon-home" aria-hiden="true"></span> Home</a></li>
+                   	
+                   	<li><a href="/transporter" >Transport</a></li>
+                   	<li><a href="/sender" >Send</a></li>
+
+                    <!-- INCLUDE A DROPDOWN TO THE LIST -->
+                    <li class="dropdown">
+                    <!-- Check out all the info that you have included to declare this element -->
+                    <a href="/mainpage/idea" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-list-alt" aria-hidden="true"> </span>
+                    About Us<span class="caret"></span></a>
+                    <!-- CONTENTS OF THE DROPDOWN -->
+                    <ul class="dropdown-menu">
+                        <li><a href="/mainpage/idea">The idea</a></li>
+                        <li><a href="/mainpage/report"><span class="glyphicon glyphicon-info-sign" aria-hiden="true"></span>The report</a></li>
+                    </ul>
+					</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                	 <li class="active"><a href="/profile"><span class="glyphicon glyphicon-user" aria-hidden="true"> </span>Your Profile</a></li>
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"> </span>Logout</a></li>
+         
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+        <header class="jumbotron">
+        <!-- We apply class jubmotron because in this section we want to showcase the company's name -->
+        <!-- Main component for a primary marketing message or call to action -->
+
+        <div class="container">
+            <div class="row row-header" >
+                <!-- COMPANY'S NAME -->
+                <div class="col-xs-12 col-sm-8">
+                    <h1>Your Profile</h1>
+                    <p style="padding:40px;"></p>
+                    <p>View and edit your profile to keep it up to date!</p>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- The main body of the webpage -->
+<div class="container">
+   <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6" >
+          <p style="padding: 50px;"></p>
+          </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-2 col-md-2">
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6" >
+            <div class="well well-sm" id="prof-card">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4" style="left:25px;">
+                        <img src="/images/userimages/<%= result.idphoto %>" alt="" class="img-rounded img-responsive img-thumbnail" width="380px" height="500px" id="userImage"/>
+                        <div id="imageModal" class="modal">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="dismiss-modal">
+                              <span aria-hidden="true">&#215;</span>
+                            </button>
+                            <img class="modal-content" id="img01"/>
+                            <div id="caption"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-8" style="left:25px;">
+                    <!-- Username & Address -->
+                        <h4><%= result.username %> </h4>
+                        <small><p><i class="glyphicon glyphicon-map-marker">
+                        </i> <%= result.address %> </p> </small>      
+                        <p>
+                            <!-- First Name & Surname -->
+                            <i class="glyphicon glyphicon-user" id="prof-glyph"></i> <%= result.name %> <%= result.surname %> 
+                            <br/>
+                            <!-- Email -->
+                            <i class="glyphicon glyphicon-envelope" id="prof-glyph"></i>: <a href="mailto:<%= result.email %> "><%= result.email %> </a>
+                            <br />
+                            <!-- Contact Number -->
+                            <i class="glyphicon glyphicon-phone-alt" id="prof-glyph"></i>: <%= result.phone %> 
+                        </p>
+                        <p style="padding: 10px;"></p>
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#editModal" id="modal-btn"><i class="glyphicon glyphicon-edit"></i>Edit Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6" >
+        <p style="padding: 50px;"></p>
+      </div>
+    </div>
+
+</div>
+
+
+<!-- The modal that edit the profile information -->
+    <!-- The modal that fills in the transporter  information -->
+     <div id="editModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <!-- Modal content-->
+            
+                <div class="modal-content">
+                    <!--Login Modal Header and Logo -->
+                  <div class="modal-header" align="center">
+       					 <button type="button" class="close" data-dismiss="modal">&#215;</button>
+        				<p>Transp<img src="svg/package.svg" width="50px" height="50px"/>rtIT</p>
+      				</div>
+
+                    <div id="forms">
+                     <form method="post" id="change-form" action="/profile/change" >
+                        <div class="modal-body">
+                            <fieldset>
+                              <legend>Update details</legend>
+                              <label for="password">Change your password:</label>
+                              <input type="password" id="new_password" name="user_password" placeholder="New Password"/><br/>
+							  <div class="alert alert-danger" id="alert-msg" style="display: none;"></div>
+                              <label for="phone">Change your phone number:</label>
+                              <input type="text" id="new_cellphone" name="user_cellphone"  placeholder="New Phone Number"/> <br/>
+                              <label for="phone">Change your address:</label>
+                              <input type="text" id="new_address" name="user_address"  placeholder="New Address"/> 
+                            </fieldset>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" value="Update">Update!</button>
+                        </div>
+                    </form>  
+                    </div>
+                </div>
+            </div>
+     </div>
+
+
+
+
+
+
+
+     
+        <footer class="row-footer">
+       
+       	 <div class="container">
+            <div class="row ">             
+                <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/mainpage">Home</a></li>
+                        <li><a href="/transporter">Transporter</a></li>
+                        <li><a href="/sender">Sender</a></li>
+                        <li><a href="/mainpage/idea">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+		              Senate House,<br/>
+		              Tyndall Ave,<br/>
+		              Bristol BS8 1TH<br/>
+		              <i class="fa fa-envelope"></i> : <a href="mailto:transportit17@gmail.com">transportit17@gmail.com</a>
+		           </address>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div  class="nav navbar-nav" style="padding: 40px 10px;">
+                        <a class="btn btn-social-icon btn-youtube" href="https://youtu.be/oJDUAFW0LzE"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <!-- <p style="padding:10px;"></p> -->
+                    <p align="center">© Copyright 2017 TransportIT.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script type="text/javascript" src="javascripts/profile-img.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<ASSEMBLER_INFO>
+ <WORKING_DIR>c:\</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes\m16def.inc</FILE>
+ </INCLUDED_FILES>
+ <LABELS>
+  <table><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>19</LINE></table>
+  <reset><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>26</LINE></reset>
+  <chk_sw><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>37</LINE></chk_sw>
+  <DLY><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>49</LINE></DLY>
+  <start><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>56</LINE></start>
+  <main><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>66</LINE></main>
+  <TIME_DELAY_3s><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>164</LINE></TIME_DELAY_3s>
+  <TIME_DELAY_2s><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>178</LINE></TIME_DELAY_2s>
+  <check_sw5><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>84</LINE></check_sw5>
+  <wait_sw><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>205</LINE></wait_sw>
+  <continue><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>81</LINE></continue>
+  <DLY3><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>91</LINE></DLY3>
+  <check_age><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>98</LINE></check_age>
+  <Light1><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>138</LINE></Light1>
+  <Light0><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>133</LINE></Light0>
+  <check_month><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>110</LINE></check_month>
+  <check_day><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>122</LINE></check_day>
+  <end><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>146</LINE></end>
+  <DLY4><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>153</LINE></DLY4>
+  <outer_loop><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>167</LINE></outer_loop>
+  <inner_loop><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>170</LINE></inner_loop>
+  <outer_loop2><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>181</LINE></outer_loop2>
+  <inner_loop2><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>184</LINE></inner_loop2>
+  <TIME_DELAY_1s><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>192</LINE></TIME_DELAY_1s>
+  <outer_loop3><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>195</LINE></outer_loop3>
+  <inner_loop3><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>198</LINE></inner_loop3>
+  <DLY2><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>223</LINE></DLY2>
+  <exit><FILE>C:\Documents and Settings\user\Desktop\kostis\lab2\lab2.asm</FILE><LINE>231</LINE></exit>
+ </LABELS>
+</ASSEMBLER_INFO>

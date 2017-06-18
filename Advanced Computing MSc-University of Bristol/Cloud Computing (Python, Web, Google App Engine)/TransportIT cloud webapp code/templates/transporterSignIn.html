@@ -1,0 +1,104 @@
+<html>
+<head>
+  <meta charset="UTF-8" >
+  <title>Transporter Details</title>
+  <link rel="stylesheet" type="text/css" href="/static/stylesheet/transporterSignIn.css">
+ 
+</head>
+<body>
+
+<ul class="tab">
+  <li><div class="header">Transport<span>IT</span></div></li>
+  <li id='last'><a href="#" class="tablinks" onmouseover="openDescription(event, 'LogOut')" onmouseleave="closeDescription(event,'LogOut')" onclick="window.location='/logout'; return false;"  ><img src="/static/img/logout.png" alt='LogOut'></a></li>  
+ <li id="last"><a href="changeDetails.html" class="tablinks" onmouseover="openDescription(event, 'ChangeYourDetails')" onmouseleave="closeDescription(event,'ChangeYourDetails')" onclick="window.location='/ChangeDetails'; return false;" ><img src="/static/img/edit.png" alt='edit'></a></li>
+</ul>
+
+<div id="LogOut" class="tabcontent">
+  <h3>LogOut</h3>
+  <p>Leaving TransportIT? Make sure that your data is accurate.</p>
+</div>
+<div id="ChangeYourDetails" class="tabcontent">
+  <h3>Change your details</h3>
+  <p>Make changes in your account to keep it up to date.</p>
+</div>
+
+<div class="signIn">  
+    <form method="post" id="signIn" action="/transporter" >
+        <h2>Fill in your details</h2>
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your journey</legend>
+          <label for="from">Travelling From:</label>
+          <input type="text" id="from" name="transporter_from" placeholder="e.g. BRISTOL"  required>
+          <label for="to">Travelling To:</label>
+          <input type="text" id="to" name="transporter_to" placeholder="e.g. NEW YORK" required> 
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="number">2</span>Arrival</legend>
+          <label for="date">Date of arrival:</label>
+          <input type="date" id="date" name="transporter_date" required>
+          <label for="time">Estimated Time of Arrival:</label>
+          {%if error %} <h2  class="warning"> {{ error }} </h2> {% endif %}
+          <input type="time" id="time" name="transporter_time" required> 
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="number">3</span>Free Space and Means of Transport</legend>
+          <label for="weight">Max weight to be carried in kilos:</label>
+          <input type="number" id="weight" step="0.1" name="transporter_weight" placeholder="e.g. 1.5" min="0" required>
+          <label for="volume">Max volume to be carried in litres:</label>
+          <input type="number" id="volume" step="0.1" name="transporter_volume" placeholder="e.g. 0.1" min="0" required>
+          <label for="means">Means of transport you are using:</label>
+          <select name="transporter_means" form="signIn" required>
+            <option value="none">Please select the means of transport you are using!</option>
+            <option value="car">Car</option>
+            <option value="airplane">Airplane</option>
+            <option value="ship">Ship</option>
+            <option value="train">Train</option>
+            <option value="bus">Bus</option>
+          </select>
+        </fieldset>
+          <button type="submit">Save your Settings </button>
+          {%if msg %} <h2  class="warning"> {{ msg }} </h2> {% endif %}
+          <button type="submit" onclick="window.location='/MainPage'; return false;">Sign in as a Transporter</button>
+        </form>
+</div>
+
+
+
+
+ <script>
+
+function openDescription(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+function closeDescription(evt,cityName)
+{
+  var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+}
+</script>
+
+     
+</body>
+</html> 

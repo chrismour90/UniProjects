@@ -1,0 +1,7 @@
+Id;Default;en;de;fr;it;es
+Alm_Normal;Normal;Normal;Normal;Normal;Normale;Normal
+Alm_Active;Active;Active;Aktiv;Active;Attivo;Activo
+Alm_WaitingForConfirmation;WaitingForConfirmation;Waiting for confirmation;Warte auf Quittierung;Attend acquittement;In attesa di conferma;Esperando confirmacion
+Alm_ActiveAcknowledged;Active, acknowledged;Active, acknowledged;Aktiv, quittiert;Active, acquittee;Attivo, confermato;Activo, confirmado
+Alm_Pending;Pending;Pending;Anstehend;En attente;In attesa;Pendiente
+;;;;;;

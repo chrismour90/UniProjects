@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sender Details</title>
+  <link rel="stylesheet" type="text/css" href="/static/stylesheet/transporterSignIn.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+
+<ul class="tab">
+  <li><div class="header">Transport<span>IT</span></div></li>
+  <li id='last'><a href="#" class="tablinks" onmouseover="openDescription(event, 'LogOut')" onmouseleave="closeDescription(event,'LogOut')" onclick="window.location='/logout'; return false;"  ><img src="/static/img/logout.png" alt='LogOut'></a></li>  
+ <li id="last"><a href="changeDetails.html" class="tablinks" onmouseover="openDescription(event, 'ChangeYourDetails')" onmouseleave="closeDescription(event,'ChangeYourDetails')" onclick="window.location='/ChangeDetails'; return false;" ><img src="/static/img/edit.png" alt='edit'></a></li>
+</ul>
+
+<div id="LogOut" class="tabcontent">
+  <h3>LogOut</h3>
+  <p>Leaving TransportIT? Make sure that your data is accurate.</p>
+</div>
+
+<div id="ChangeYourDetails" class="tabcontent">
+  <h3>Change your details</h3>
+  <p>Make changes in your account to keep it up to date.</p>
+</div>
+
+
+
+<div class="signIn">  
+    <form method="post" id="signIn" action="/sender" >
+        <h2>Fill in your details</h2>
+        
+        <fieldset>
+          <legend><span class="number">1</span>The item's journey</legend>
+          <label for="from">Expected From:</label>
+          <input type="text" id="from" name="sender_from" placeholder="e.g. BRISTOL"  required>
+          <label for="to">Expected In:</label>
+          <input type="text" id="to" name="sender_to" placeholder="e.g. NEW YORK"  required> 
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="number">2</span>Arrival</legend>
+          <label for="time">Urgent? (search for transporters within 2 days)</label>
+          <input type="radio" name="urgent" value="yes" onclick="autofill()"> Yes 
+          <input type="radio" name="urgent" value="no" onclick="empty()"> No
+          <label for="date">Approximately the period of time you expect to receive the item</label>
+          <label for="date">From:</label>
+          <input type="date" id="dateFrom" name="sender_from_date" required>
+          <label for="date">Until:</label>
+          <input type="date" id="dateUntil" name="sender_until_date"  required>
+          {%if error %} <h2  class="warning"> {{ error }} </h2> {% endif %}
+          
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="number">3</span>Dimensions of the item</legend>
+          <label for="weight">Max weight to be carried in kilos:</label>
+          <input type="number" step="0.1" id="weight" name="sender_weight" placeholder="e.g. 1" min="0" required>
+          <label for="volume">Max volume to be carried in litres:</label>
+          <input type="number" step="0.1" id="volume" name="sender_volume" placeholder="e.g. 0.1" min="0" required>
+        </fieldset>
+          <button type="submit">Save your Settings </button>
+          {%if msg %} <h2 class="warning"> {{ msg }} </h2> {% endif %}
+          <button type="submit" onclick="window.location='/MainPage'; return false;">Search for Transporters</button>
+          <button type="submit" onclick="window.location='/SenderHistory'; return false;">Just Sign In to see your history</button>
+        </form>
+</div>
+
+
+
+
+ <script>
+function openDescription(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+function closeDescription(evt,cityName)
+{
+  var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+}
+
+function autofill()
+{
+
+ date = new Date().toISOString().match(/(\d{4}\-\d{2}\-\d{2})/);
+$('input[name=sender_from_date]').val(date[1]);
+$('input[name=sender_until_date]').val(date[1]);
+document.getElementById("dateUntil").stepUp(2);
+}
+
+function empty()
+{
+  $('input[name=sender_from_date]').val("");
+$('input[name=sender_until_date]').val("");
+}
+
+
+</script>
+
+     
+</body>
+</html> 
